@@ -22,7 +22,7 @@ export const Router = () => {
         </Route>
 
         <Route path="/artists">
-        <h1>Artists</h1>
+            <h1>Artists</h1>
             <Button>Volver</Button>
         </Route>
 

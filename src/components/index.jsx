@@ -1,59 +1,44 @@
 import { React } from "react";
 import { useFetch } from "../useFetch";
-// import { Button, Card } from "@tremor/react";
+import { Card, Title, Text, Grid, Col } from "@tremor/react";
+import { NavBar } from "./nav-bar";
 
+import '../../public/css/index.css';
 export const Index = () => {
-  const { data: users, loading } = useFetch(
-    "https://localhost:7196/api/User/GetUsers"
-  );
-
-  const { data: releases, loading: loadingReleases } = useFetch(
-    "https://localhost:7196/api/Releases/GetRelease"
-  );
-
-  const { data: artists, loading: loadingArtists } = useFetch(
-    "https://localhost:7196/api/Artist/GetArtists"
-  );
-
-
 
   return (
-    <>
-      <div>
-        <h2>Users</h2>
-        <div className="card">
-          <ul>
-            {loading && <li>loading...</li>}
-            {users?.map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    <NavBar />
+//     <main>
+//     <Title>Dashboard</Title>
+//     <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</Text>
 
-      <div>
-        <h2>Releases</h2>
-        <div className="card">
-          <ul>
-            {loadingReleases && <li>loading...</li>}
-            {releases?.map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+//     <Grid numItemsLg={6} className="gap-6 mt-6 card">
+//       <Text>pruea</Text>
+//       <Col numColSpanLg={4}>
+//         <Card className="h-full card">
+//           <div className="h-60" />
+//           <Text>pruea 2</Text>
+//         </Card>
+//       </Col>
 
-      <div>
-        <h2>Artists</h2>
-        <div className="card">
-          <ul>
-            {loadingArtists && <li>loading...</li>}
-            {artists?.map((item) => (
-              <li key={item.id}>{item.fullName}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </>
+//       <Col numColSpanLg={2}>
+//         <div className="space-y-6">
+//           <Card className="card">
+//             <div className="h-24" />
+//             <Text>pruea 3</Text>
+//           </Card>
+//           <Card>
+//             <div className="h-24" />
+//             <Text>pruea 4</Text>
+//           </Card>
+//           <Card>
+//             <div className="h-24" />
+//             <Text>pruea 5</Text>
+//           </Card>
+//         </div>
+//       </Col>
+//     </Grid>
+//   </main>
+
   );
 };
