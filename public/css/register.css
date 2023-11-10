@@ -1,0 +1,43 @@
+.form {
+    background-color: white;
+    /* width: calc(100% - 30rem); */
+    align-items: center;
+    margin-bottom: 3rem;
+    /* border: 2px solid red; */
+    > div {
+        /* border: 4px solid blue; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* min-width: fit-content; */
+        flex-wrap: wrap;
+        > label {
+            /* border: 2px solid orange; */
+            margin: 0.5rem;
+        }
+    }
+}
+
+#register {
+    margin: 1rem 0 0 0;
+    font-size: 4rem;
+    color: #00ff00;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#loginBtn {
+    margin: 1rem auto;
+    display: block;
+    width: 50%;
+    transition: all 0.2s ease-in-out;
+    background-color: gainsboro;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+}
+
+#registerBtn {
+    font-size: 1.5rem;
+    width: 100%;
+}
