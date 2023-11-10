@@ -1,11 +1,15 @@
 import React from "react";
 // import { TextInput, Grid, Col, Card, Text, Metric } from '@tremor/react';
 import "../../public/css/navbar.css";
+import { Link } from "wouter";
 
 export const NavBar = () => {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
+      <Link to="/login" className="hover:opacity-70">
+          login
+      </Link>
         <a class="navbar-brand" href="#">
           Musicboxd
         </a>

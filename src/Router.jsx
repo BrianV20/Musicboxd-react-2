@@ -5,7 +5,8 @@ import { MessageCard } from "./components/message-card";
 import { Index } from "./components";
 
 import { AuthContext } from "./context/auth";
-import { ROLES } from "./constants";
+import { Login } from "./components/user/login";
+// import { ROLES } from "./constants";
 
 export const Router = () => {
     const { state, handleLogout } = useContext(AuthContext);
@@ -15,7 +16,9 @@ export const Router = () => {
         <Route path="/">
             <Index />
         </Route>
-
+        <Route path="/login">
+            <Login />
+        </Route>
         <Route path="/releases">
             <h1>Releases</h1>
             <Button>Volver</Button>
