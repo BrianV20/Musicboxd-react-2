@@ -53,6 +53,9 @@ export const Login = () => {
     e.target.reset();
     setErrors({});
     mutate(credentials);
+    console.log("DATA DEL LOGIN " + data);
+    console.log("HICISTE LOGIN BIEN " + data.id);
+    // localStorage.setItem('userId', data.id);
   };
   return (
     <>

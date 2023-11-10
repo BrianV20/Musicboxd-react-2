@@ -12,13 +12,17 @@ import { toast } from "sonner";
 import { NavBar } from "../nav-bar";
 import { Footer } from "../footer";
 
-const findRelease = async (releases, id) => {
-  return await releases.find((release) => release.id === id);
-};
+// const findRelease = async (releases, id) => {
+//   return await releases.map((release) => release.id === id);
+// };
 
-const findArtist = async (artists, id) => {
-    return await artists.find((artist) => artist.id === id);
-};
+// const findArtist = async (artists, release) => {
+//     return await artists.find((artist) => artist.id === release.artist.id);
+// };
+
+const yearOfRelease = (date) => {
+  return date.slice(0, 4);
+}
 
 export const ReleaseById = (props) => {
   const { id } = props.params;
@@ -37,15 +41,34 @@ export const ReleaseById = (props) => {
     queryFn: () => getArtists(),
   });
 
-//   let release = releases?.find((release) => release.id == id);
-//   let artist = Artist?.find((artist) => artist.id == release.artist.id);
+  //   let release = releases?.find((release) => release.id == id);
+  //   let artist = Artist?.find((artist) => artist.id == release.artist.id);
+  // let release = findRelease(releases, id);
+  // let artist = findArtist(Artist, release);
 
   return (
     <>
       <NavBar />
-      <div>
-        <h2>{release.name}</h2>
-      </div>
+      <main id="releaseByIdMain">
+        {releases?.map((release) => (
+          <div>
+            {release.id == id ? (
+              <div>
+                <h2>{release.name}</h2>
+                <div></div>
+                {Artist?.map((artist) => (
+                  <div>
+                    {release.artist.id === artist.id ? (
+                      <h4>{artist.fullName}</h4>
+                    ) : null}
+                  </div>
+                ))}
+                <h4>{yearOfRelease(release.releaseDate)}</h4>
+              </div>
+            ) : null}
+          </div>
+        ))}
+      </main>
       <Footer />
     </>
   );
