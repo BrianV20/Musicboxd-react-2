@@ -3,6 +3,15 @@ import { checkResponse } from "@/utils/services";
 const { VITE_API_URL: baseUrl } = import.meta.env;
 const authorizationHeader = `Bearer ${localStorage.getItem("token")}`;
 
+export const getReviews = async () => {
+  const response = await fetch(`${baseUrl}/Review/GetReview`, {
+    headers: {
+      Authorization: authorizationHeader,
+    },
+  });
+  return checkResponse(response);
+};
+
 export const getReview = async (id) => {
   const response = await fetch(`${baseUrl}/Review/${id}`, {
     headers: {

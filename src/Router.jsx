@@ -8,6 +8,8 @@ import { AuthContext } from "./context/auth";
 import { Login } from "./components/user/login";
 import { Artist } from "./components/artist/artist";
 import { CreateUser } from "./components/user/register";
+import { Release } from "./components/release/release";
+
 // import { ROLES } from "./constants";
 
 export const Router = () => {
@@ -22,7 +24,7 @@ export const Router = () => {
             <Login />
         </Route>
         <Route path="/releases">
-            <h1>Releases</h1>
+            <Release/>
             <Button>Volver</Button>
         </Route>
         <Route path="/register">

@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { getArtists } from '../../services/artists';
 import { getReleases } from '../../services/releases';
 import { useQuery } from "@tanstack/react-query";
- import { useLocation } from "wouter";
-
 
 export const Artist = () => {
 
