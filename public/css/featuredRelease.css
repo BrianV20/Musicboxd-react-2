@@ -1,0 +1,27 @@
+main {
+    background-color: gainsboro;
+    display: flex;
+    border-color: 2px solid black;
+    /* justify-content: space-evenly; */
+}
+
+.albumCover {
+    /* border: 2px solid red; */
+    > img {
+        width: 90%;
+        height: 60%;
+        margin: 1rem;
+        /* margin-left: 0; */
+    }
+}
+
+.albumInfo {
+    /* width: fit-content; */
+    /* border: 2px solid blue; */
+    text-align: start;
+    margin: 1.5rem 0 0 1.5rem;
+
+    > h2, h5 {
+        display: inline-block;
+    }
+}

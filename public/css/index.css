@@ -1,3 +1,14 @@
-.card {
-    border: 2px solid black;
+.col {
+    border: 2px solid orange;
+}
+
+.indexContainer {
+    margin-top: 2rem;
+    /* .col {
+        margin-bottom: 2rem;
+    } */
+}
+
+h2 {
+    text-align: start;
 }
