@@ -7,9 +7,6 @@ export const NavBar = () => {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-      <Link to="/login" className="hover:opacity-70">
-          login
-      </Link>
         <a class="navbar-brand" href="#">
           Musicboxd
         </a>
@@ -50,9 +47,14 @@ export const NavBar = () => {
           </form>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Sign In
-              </a>
+            <Link to="/login" className="hover:opacity-70">
+              Sign in
+            </Link>
+            </li>
+            <li>
+              <Link to="/register" className="hover:opacity-70">
+                register
+              </Link>
             </li>
           </ul>
         </div>

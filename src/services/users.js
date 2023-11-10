@@ -22,6 +22,7 @@ export const getUser = async (id) => {
 };
 
 export const createUser = async (user) => {
+  console.log(user);
   const response = await fetch(`${baseUrl}/User/Register`, {
     method: "POST",
     headers: {

@@ -60,8 +60,8 @@ export const Login = () => {
                   name="usernameOrEmail"
                   placeholder="Type username or email here"
                   autoComplete="off"
-                  error={Boolean(errors.username ?? errors.email)}
-                  errorMessage={errors.username ?? errors.email}
+                  error={Boolean(errors.username)}
+                  errorMessage={errors.username }
                 />
               </label>
               <label>

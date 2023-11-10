@@ -6,6 +6,7 @@ import { Index } from "./components";
 
 import { AuthContext } from "./context/auth";
 import { Login } from "./components/user/login";
+import { CreateUser } from "./components/user/register";
 // import { ROLES } from "./constants";
 
 export const Router = () => {
@@ -23,7 +24,9 @@ export const Router = () => {
             <h1>Releases</h1>
             <Button>Volver</Button>
         </Route>
-
+        <Route path="/register">
+            <CreateUser/>
+        </Route>
         <Route path="/artists">
             <h1>Artists</h1>
             <Button>Volver</Button>
