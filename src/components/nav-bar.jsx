@@ -29,9 +29,9 @@ export const NavBar = () => {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+            <Link to="/artists" className="hover:opacity-70">
                 Artists
-              </a>
+            </Link>
             </li>
           </ul>
           <form class="d-flex" role="search">
