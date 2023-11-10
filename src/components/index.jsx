@@ -15,7 +15,7 @@ export const Index = () => {
             <h2>Featured release</h2>
             <FeaturedRelease />
           </div>
-          <div class="col">Column</div>
+          <div class="col"></div>
         </div>
       </div>
     </>

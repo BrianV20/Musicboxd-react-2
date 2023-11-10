@@ -1,4 +1,56 @@
 #mainArtist {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.artist-details {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.artist-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.artist-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.artist-item .name {
+  font-size: 18px;
+  color: #333;
+}
+
+.artist-item .genre {
+  font-size: 14px;
+  color: #666;
+}
+
+
+/* #mainArtist {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -95,4 +147,4 @@
 
 .reviews-container button:hover {
   background-color: #2e7f32;
-}
+} */

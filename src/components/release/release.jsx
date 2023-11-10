@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLocation as searchParameters } from 'react';
 // import './Body.css';
 import { createReviewSchema  } from "@/schemas/validation/review";
 import { mappedErrors } from "@/utils/mapped-errors";
@@ -13,6 +13,9 @@ export const Release = () => {
   const [errors, setErrors] = useState({});
   const queryClient = useQueryClient();
   const [, setNavigate] = useLocation();
+
+  const location = searchParameters();
+  const searchParams = new URLSearchParams(location.search);
   // const albumData = {
   //   title: 'Artaud',
   //   artist: 'Pescado Rabioso',
@@ -84,6 +87,8 @@ export const Release = () => {
   // const pruebaReview = 'NoMamesCabron8825: Esta es una reseña de prueba para destacar la funcionalidad. ¡Gran álbum!';
 
   return (
+    <>
+
     <main id='mainRelease'>
       <div className="album-container">  
         {releases?.map((release) => (
@@ -137,6 +142,7 @@ export const Release = () => {
 
       {/* reseñas */}
     </main>
+    </>
   );
 };
 

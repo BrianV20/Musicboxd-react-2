@@ -9,6 +9,7 @@ import { Login } from "./components/user/login";
 import { Artist } from "./components/artist/artist";
 import { CreateUser } from "./components/user/register";
 import { Release } from "./components/release/release";
+import { ReleaseById } from "./components/release/releaseById";
 
 // import { ROLES } from "./constants";
 
@@ -20,19 +21,24 @@ export const Router = () => {
         <Route path="/">
             <Index />
         </Route>
+
         <Route path="/login">
             <Login />
         </Route>
+        
+        <Route path="/releases/:id" component={ReleaseById} />
+
         <Route path="/releases">
             <Release/>
-            <Button>Volver</Button>
         </Route>
+
+
         <Route path="/register">
             <CreateUser/>
         </Route>
+
         <Route path="/artists">
             <Artist/>
-            <Button>Volver</Button>
         </Route>
 
         <Route>

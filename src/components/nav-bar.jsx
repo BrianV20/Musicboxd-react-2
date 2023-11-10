@@ -7,9 +7,9 @@ export const NavBar = () => {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Musicboxd
-        </a>
+        <Link to="/" className="hover:opacity-70 nav-link">
+          <h2>Musicboxd</h2>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -24,14 +24,14 @@ export const NavBar = () => {
         <div class="collapse navbar-collapse links" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <Link to="/releases" className="hover:opacity-70 nav-link">
                 Releases
-              </a>
+              </Link>
             </li>
             <li class="nav-item">
-            <Link to="/artists" className="hover:opacity-70">
+              <Link to="/artists" className="hover:opacity-70 nav-link">
                 Artists
-            </Link>
+              </Link>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -47,12 +47,12 @@ export const NavBar = () => {
           </form>
           <ul class="navbar-nav">
             <li class="nav-item">
-            <Link to="/login" className="hover:opacity-70">
-              Sign in
-            </Link>
+              <Link to="/login" className="hover:opacity-70 nav-link">
+                Sign in
+              </Link>
             </li>
             <li>
-              <Link to="/register" className="hover:opacity-70">
+              <Link to="/register" className="hover:opacity-70 nav-link">
                 register
               </Link>
             </li>

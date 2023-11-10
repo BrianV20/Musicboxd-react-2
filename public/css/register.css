@@ -2,6 +2,7 @@
     background-color: white;
     /* width: calc(100% - 30rem); */
     align-items: center;
+    text-align: center;
     margin-bottom: 3rem;
     /* border: 2px solid red; */
     > div {
@@ -21,23 +22,25 @@
 
 #register {
     margin: 1rem 0 0 0;
+    text-align: center;
     font-size: 4rem;
     color: #00ff00;
     text-shadow: 2px 2px 4px #000000;
 }
 
-#loginBtn {
-    margin: 1rem auto;
-    display: block;
-    width: 50%;
+#registerBtn {
+    margin: 2rem 0;
+    font-size: 1.5rem;
     transition: all 0.2s ease-in-out;
-    background-color: gainsboro;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    margin-bottom: 4rem;
 }
 
-#registerBtn {
-    font-size: 1.5rem;
-    width: 100%;
+#registerBtn:hover {
+    background-color: rgb(68, 98, 216);
+    color: white;
+}
+
+.alreadyHaveAccount {
+    text-align: center;
+    margin-bottom: 4rem;
+    text-decoration: none;
 }

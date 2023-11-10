@@ -4,7 +4,7 @@ import '../../public/css/footer.css';
 export const Footer = () => {
   return (
     <footer>
-      <p>Copyright © 2021 MusicBoxd</p>
+      <p>Copyright © 2023 MusicBoxd</p>
     </footer>
   );
 }
