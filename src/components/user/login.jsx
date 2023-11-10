@@ -1,18 +1,19 @@
 import { Loader } from "@/components/loader";
 import { loginSchema } from "@/schemas/validation/auth";
 import { loginUser } from "@/services/users";
-import { checkIfIsEmailOrUsername, mappedErrors } from "@/utils/mapped-errors";
+import { mappedErrors } from "@/utils/mapped-errors";
 import { LoginIcon } from "@heroicons/react/outline";//ojo con esto
 import { useMutation } from "@tanstack/react-query";
 import { Button, Card, Text, TextInput, Title } from "@tremor/react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useAuthStore } from "../../store/auth";
+import { useLocation } from "wouter";
 
 export const Login = () => {
     const [errors, setErrors] = useState({});
-  
     const { handleLogin } = useAuthStore((state) => state);
+    const [, setNavigate] = useLocation();
   
     const { mutate, isPending } = useMutation({
       mutationKey: ["login"],
@@ -20,6 +21,7 @@ export const Login = () => {
       onSuccess: (data) => {
         handleLogin(data);
         toast.success("Welcome back!");
+        setNavigate("/");
       },
       onError: () => {
         toast.error("Invalid credentials");
@@ -30,14 +32,17 @@ export const Login = () => {
       e.preventDefault();
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
-      const { usernameOrEmail, password } = data;
-      const field = checkIfIsEmailOrUsername(usernameOrEmail);
+      console.log(data);
+      
+      const { userName, password } = data;
+      const field = "userName";
       const credentials = {
-        [field]: usernameOrEmail,
+        [field]: userName,
         password,
       };
       const { success, errors } = mappedErrors(loginSchema, credentials);
       if (!success) {
+          console.log(errors);
         setErrors(errors);
         return;
       }
@@ -56,9 +61,9 @@ export const Login = () => {
                 <Text>Username or Email:</Text>
                 <TextInput
                   className="w-full px-3"
-                  label="Username or Email"
-                  name="usernameOrEmail"
-                  placeholder="Type username or email here"
+                  label="Username"
+                  name="userName"
+                  placeholder="Type username here"
                   autoComplete="off"
                   error={Boolean(errors.username)}
                   errorMessage={errors.username }

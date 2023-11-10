@@ -18,7 +18,6 @@ export const CreateUser = () => {
     mutationKey: ["user"],
     mutationFn: (userData) => createUser(userData),
     onSuccess: () => {
-      console.log("hola");
       queryClient.invalidateQueries({ queryKey: ["users"] });
       toast.success("User created");
       setNavigate("/");
@@ -91,7 +90,7 @@ export const CreateUser = () => {
           </label>
           <label>
             <Text>Password:</Text>
-            <TextInput
+            <input
               className="w-full px-3"
               label="Password"
               name="password"

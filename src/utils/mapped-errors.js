@@ -15,8 +15,4 @@ export const mappedErrors = (schema, data) => {
     return { success, errors };
   };
   
-  export const checkIfIsEmailOrUsername = (usernameOrEmail) => {
-    const isEmail = usernameOrEmail.includes("@");
-    return isEmail ? "email" : "username";
-  };
   
