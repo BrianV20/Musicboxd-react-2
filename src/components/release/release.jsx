@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 // import './Body.css';
 import { createReviewSchema } from "@/schemas/validation/review";
 import { mappedErrors } from "@/utils/mapped-errors";
@@ -8,30 +8,34 @@ import { useQuery } from "@tanstack/react-query";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { useLocation, Link } from "wouter";
-
 import { NavBar } from "../nav-bar";
 import { Footer } from "../footer";
-
+import { AuthContext } from "../../context/auth";
+// import {jwtDecode} from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import "../../../public/css/release.css";
 
 export const Release = () => {
+  const { state } = useContext(AuthContext);
   const [errors, setErrors] = useState({});
   const queryClient = useQueryClient();
   const [, setNavigate] = useLocation();
-
+  // console.log(localStorage.getItem("user"));
   const yearOfRelease = (date) => {
     return date.slice(0, 4);
   };
-
+  
   const { mutate } = useMutation({
     mutationKey: ["review"],
     mutationFn: (reviewData) => createReview(reviewData),
     onSuccess: () => {
+      console.log(state.user.token);
       queryClient.invalidateQueries({ queryKey: ["review"] });
       toast.success("review created");
       setNavigate("/");
     },
     onError: (error) => {
+      console.log(state.user.token);
       console.log(error);
       toast.error("Error creating user");
     },
@@ -47,6 +51,7 @@ export const Release = () => {
 
   const handleAddReview = (e) => {
     e.preventDefault();
+    console.log(state.token);
     console.log(e.target);
     const formData = new FormData(e.target);
     const data = {

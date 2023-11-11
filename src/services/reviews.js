@@ -1,4 +1,4 @@
-import { checkResponse } from "@/utils/services";
+import { checkResponse, getAuthHeader  } from "@/utils/services";
 
 const { VITE_API_URL: baseUrl } = import.meta.env;
 const authorizationHeader = `Bearer ${localStorage.getItem("token")}`;
@@ -22,10 +22,11 @@ export const getReview = async (id) => {
 };
 
 export const createReview = async (user) => {
+  console.log(authorizationHeader);
   const response = await fetch(`${baseUrl}/Review/CreateReview`, {
     method: "POST",
     headers: {
-      Authorization: authorizationHeader,
+      Authorization: getAuthHeader(),
       "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
