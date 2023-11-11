@@ -12,10 +12,16 @@ import { useLocation, Link } from "wouter";
 import { NavBar } from "../nav-bar";
 import { Footer } from "../footer";
 
+import "../../../public/css/release.css";
+
 export const Release = () => {
   const [errors, setErrors] = useState({});
   const queryClient = useQueryClient();
   const [, setNavigate] = useLocation();
+
+  const yearOfRelease = (date) => {
+    return date.slice(0, 4);
+  };
 
   const { mutate } = useMutation({
     mutationKey: ["review"],
@@ -38,20 +44,7 @@ export const Release = () => {
     queryKey: ["reviews"],
     queryFn: () => getReviews(),
   });
-  // if (isError) toast.error("Error getting users");
 
-  // const [reviews, setReviews] = useState([]);
-  // const [newReview, setNewReview] = useState('');
-  // const [userName, setUserName] = useState('');
-
-  // const handleAddReview = () => {
-  //   if (newReview.trim() !== '' && userName.trim() !== '') {
-  //     const userReview = `${userName}: ${newReview}`;
-  //     setReviews([...reviews, userReview]);
-  //     setNewReview('');
-  //     setUserName('');
-  //   }
-  // };
   const handleAddReview = (e) => {
     e.preventDefault();
     console.log(e.target);
@@ -72,70 +65,67 @@ export const Release = () => {
     setErrors({});
     mutate(data);
   };
-  // Reseña de prueba
-  // const pruebaReview = 'NoMamesCabron8825: Esta es una reseña de prueba para destacar la funcionalidad. ¡Gran álbum!';
 
   return (
     <>
       <NavBar />
       <main id="mainRelease">
-        <div className="album-container">
-          {releases?.map((release) => (
-            <div>
-              <div className="album-details">
+        {releases?.map((release) => (
+          <div className="release-container">
+            <div className="album-details">
+              <Link to={`/releases/${release.id}`}>
                 <img
-                  src={release.UrlImage}
+                  src={release.urlImage}
                   alt="Portada del Álbum"
                   className="album-cover"
                 />
+              </Link>
 
-                <Link to={`/releases/${release.id}`}>
-                  <h2>{release.name}</h2>
-                </Link>
+              <Link to={`/releases/${release.id}`}>
+                <h2>{release.name}</h2>
+              </Link>
 
-                <h3>por {release.artist.fullName}</h3>
-                <h6>{release.genre.name}</h6>
-                <p className="album-year">{release.releaseDate}</p>
-                {/* <p>{albumData.description}</p> este campo tambien se lo tengo que agregar y cambiarlo por el de score */}
-              </div>
-              <div className="reviews-container">
-                <h4>Reseñas</h4>
-                {reviews?.map((review) => (
-                  <ul>
-                    {release.id == review.releaseId ? (
-                      <li>{review.text}</li>
-                    ) : (
-                      ""
-                    )}
-                  </ul>
-                ))}
-                <form onSubmit={handleAddReview}>
-                  <div className="review-input">
-                    <textarea
-                      placeholder="Escribe tu reseña aquí..."
-                      name="Text"
-                      // value={newReview}
-                      // onChange={(e) => setNewReview(e.target.value)}
-                    />
-                    <input
-                      type="number"
-                      name="ratingId"
-                      placeholder="ingrese su calif (1 a 5)"
-                    />
-                    <input
-                      type="number"
-                      name="releaseId"
-                      value={release.id}
-                      placeholder="ingrese su calif (1 a 5)"
-                    />
-                    {/* hay que ocultar este input */}
-                  </div>
-                  <button>Agregar reseña</button>
-                </form>
-              </div>
+              <h4>por</h4>
+              <Link to={`/artists/${release.artist.id}`}>
+                <h3>{release.artist.fullName}</h3>
+              </Link>
+              <h6>{release.genre.name}</h6>
+              <p className="album-year">{yearOfRelease(release.releaseDate)}</p>
+              {/* <p>{albumData.description}</p> este campo tambien se lo tengo que agregar y cambiarlo por el de score */}
             </div>
-          ))}
-        </div>
+            <div className="reviews-container">
+              <h4>Reseñas</h4>
+              {reviews?.map((review) => (
+                <ul>
+                  {release.id == review.releaseId ? <li>{review.text}</li> : ""}
+                </ul>
+              ))}
+              <form onSubmit={handleAddReview}>
+                <div className="review-input">
+                  <textarea
+                    placeholder="Escribe tu reseña aquí..."
+                    name="Text"
+                  />
+                  <input
+                    type="number"
+                    name="ratingId"
+                    placeholder="ingrese su calif (1 a 5)"
+                  />
+                  <input
+                    type="number"
+                    name="releaseId"
+                    value={release.id}
+                    placeholder="ingrese su calif (1 a 5)"
+                    className="inputReleaseId"
+                  />
+                  {/* hay que ocultar este input */}
+                </div>
+                <button>Agregar reseña</button>
+              </form>
+            </div>
+          </div>
+        ))}
+        {/* </div> */}
 
         {/* reseñas */}
       </main>

@@ -2,6 +2,7 @@ import { React } from "react";
 import { useFetch } from "../useFetch";
 // import { Card, Title, Text, Grid, Col } from "@tremor/react";
 import { NavBar } from "./nav-bar";
+import { Footer } from "./footer";
 import { FeaturedRelease } from "./release/featuredRelease";
 
 import "../../public/css/index.css";
@@ -18,6 +19,7 @@ export const Index = () => {
           <div class="col"></div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

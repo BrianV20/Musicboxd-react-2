@@ -1,43 +1,31 @@
 #mainRelease {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.album-container {
   display: flex;
-  align-items: flex-start;
-  margin-top: 20px;
+  flex-direction: column;
 }
 
-.album-cover {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  margin-right: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.release-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .album-details {
-  flex-grow: 1;
-}
-
-.album-details h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.album-details h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.album-details .album-year {
-  font-size: 18px;
-  color: #777;
-  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  > img {
+    border-radius: 8px;
+    box-shadow: -5px 3px 4px gray;
+    margin-bottom: 1rem;
+  }
 }
 
 .album-details p {
@@ -46,9 +34,11 @@
   margin-bottom: 8px;
 }
 
-.album-details p:last-child {
-  margin-bottom: 0;
+.inputReleaseId {
+  visibility: hidden;
 }
+
+
 
 .reviews-container {
   margin-top: 20px;

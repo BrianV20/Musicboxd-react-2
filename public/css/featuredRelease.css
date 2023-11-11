@@ -5,14 +5,11 @@ main {
     /* justify-content: space-evenly; */
 }
 
-.albumCover {
-    /* border: 2px solid red; */
-    > img {
-        width: 90%;
-        height: 60%;
-        margin: 1rem;
-        /* margin-left: 0; */
-    }
+img {
+    width: 90%;
+    height: 60%;
+    margin: 1rem;
+    border-radius: 5px;
 }
 
 .albumInfo {

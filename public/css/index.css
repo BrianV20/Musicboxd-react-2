@@ -1,12 +1,6 @@
-.col {
-    /* border: 2px solid orange; */
-}
-
 .indexContainer {
     margin-top: 2rem;
-    /* .col {
-        margin-bottom: 2rem;
-    } */
+    min-height: 100vh;
 }
 
 h2 {

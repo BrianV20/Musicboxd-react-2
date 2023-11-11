@@ -10,6 +10,7 @@ import { Artist } from "./components/artist/artist";
 import { CreateUser } from "./components/user/register";
 import { Release } from "./components/release/release";
 import { ReleaseById } from "./components/release/releaseById";
+import { ArtistById } from "./components/artist/artistById";
 
 // import { ROLES } from "./constants";
 
@@ -36,6 +37,8 @@ export const Router = () => {
         <Route path="/register">
             <CreateUser/>
         </Route>
+
+        <Route path="/artists/:id" component={ArtistById} />
 
         <Route path="/artists">
             <Artist/>

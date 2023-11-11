@@ -33,7 +33,9 @@ export const Artist = () => {
         {Artist?.map((artist) => (
           <div className="artist-container">
             <div className="artist-details">
-              <h1>{artist.fullName}</h1>
+              <Link to={`/artists/${artist.id}`}>
+                <h1>{artist.fullName}</h1>
+              </Link>
               <p className="artist-country">{artist.country.name}</p>
             </div>
             <h3>Releases</h3>

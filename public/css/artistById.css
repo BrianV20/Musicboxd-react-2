@@ -1,0 +1,8 @@
+a {
+    font-size: 1rem;
+}
+
+#artistByIdMain {
+    display: flex;
+    justify-content: center;
+}
