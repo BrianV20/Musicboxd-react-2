@@ -1,5 +1,4 @@
 import React from "react";
-// import { TextInput, Grid, Col, Card, Text, Metric } from '@tremor/react';
 import "../../public/css/navbar.css";
 import { Link } from "wouter";
 
@@ -8,7 +7,7 @@ export const NavBar = () => {
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <Link to="/" className="hover:opacity-70 nav-link">
-          <h2>Musicboxd</h2>
+          <h2 id="title">Musicboxd</h2>
         </Link>
         <button
           class="navbar-toggler"

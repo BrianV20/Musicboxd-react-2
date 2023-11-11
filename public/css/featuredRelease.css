@@ -2,7 +2,11 @@ main {
     background-color: gainsboro;
     display: flex;
     border-color: 2px solid black;
-    /* justify-content: space-evenly; */
+}
+
+.featuredReleaseContainer {
+    display: flex;
+    width: 100%;
 }
 
 img {
@@ -12,13 +16,20 @@ img {
     border-radius: 5px;
 }
 
+#albumInfoContainer {
+    width: 65%;
+}
+
 .albumInfo {
-    /* width: fit-content; */
-    /* border: 2px solid blue; */
     text-align: start;
     margin: 1.5rem 0 0 1.5rem;
 
     > h2, h5 {
         display: inline-block;
     }
+}
+
+#featuredReleaseReviews div {
+    width: 80%;
+    margin: 0 auto;
 }

@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Route, Switch } from 'wouter';
-import { Button } from "@tremor/react";
 import { MessageCard } from "./components/message-card";
 import { Index } from "./components";
 

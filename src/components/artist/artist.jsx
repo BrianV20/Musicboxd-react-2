@@ -1,5 +1,4 @@
-import React, { useState, useLocation as searchParameters } from "react";
-// import './Body.css';
+import React from "react";
 import { getArtists } from "../../services/artists";
 import { getReleases } from "../../services/releases";
 import { useQuery } from "@tanstack/react-query";

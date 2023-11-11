@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getReleases } from "../../services/releases";
 import { getArtists } from "../../services/artists";
 import { useQuery } from "@tanstack/react-query";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { useLocation, Link } from "wouter";
 
 import { NavBar } from "../nav-bar";

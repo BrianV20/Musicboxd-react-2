@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-// import './Body.css';
+import React from "react";
 import { createReviewSchema } from "@/schemas/validation/review";
 import { mappedErrors } from "@/utils/mapped-errors";
 import { getReleases } from "../../services/releases";
-import { getArtists } from "../../services/artists";
 import { getReviews, createReview } from "../../services/reviews";
 import { useQuery } from "@tanstack/react-query";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation  } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Link } from "wouter";
 
@@ -25,15 +23,6 @@ export const ReleaseById = (props) => {
   const { data: releases } = useQuery({
     queryKey: ["releases"],
     queryFn: () => getReleases(),
-  });
-
-  const {
-    data: Artist,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["artists"],
-    queryFn: () => getArtists(),
   });
 
   const { data: reviews } = useQuery({
